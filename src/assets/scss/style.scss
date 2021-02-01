@@ -1,0 +1,118 @@
+/* 主題色 */
+$mainColor: #fafafa;
+
+html,
+body {
+  height: 100vh;
+  background: $mainColor;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// Navbar
+#navbar {
+  height: 90px;
+}
+
+@media (min-width: 992px) {
+  .nav-hover {
+    position: relative;
+  }
+  .nav-hover ::after {
+    left: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: rgba(238, 193, 69);
+    bottom: -4px;
+    transform: scale(0, 1);
+    transform-origin: 100% 50%;
+    transition: transform 0.5s ease;
+  }
+
+  .nav-hover :hover::after {
+    transform: scale(1, 1);
+    transform-origin: 0% 50%;
+  }
+}
+
+#content {
+  position: relative;
+  height: 100%;
+  // padding-top: 90px;
+}
+
+.nav-link {
+  color: rgb(0, 0, 0);
+}
+
+// shop
+.card {
+  background: #fafafa;
+  padding-left: 0;
+  border: none;
+  padding: 0;
+}
+
+#shop .card-body {
+  background: #fafafa;
+  padding-left: 0;
+  border: none;
+  padding: 0;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #33679e;
+}
+
+#home .btn,
+#about .btn,
+#item .btn,
+.nav-item .btn {
+  color: #292921;
+  background-color: rgb(255, 255, 255);
+  border-color: #212529;
+}
+
+#home h2,
+#about h2 {
+  display: inline-block;
+  position: relative;
+  background-image: linear-gradient(
+    transparent 50%,
+    rgba(238, 193, 69, 0.5) 50%
+  );
+}
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes fill-text-white {
+  to {
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(
+      transparent 50%,
+      rgba(238, 193, 69, 0.5) 50%
+    );
+  }
+}
