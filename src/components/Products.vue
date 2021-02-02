@@ -311,3 +311,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  #das-sidebar .nav-item a:hover,
+  #productlist .nav-item a:hover {
+    color: #c0392b;
+  }
+</style>

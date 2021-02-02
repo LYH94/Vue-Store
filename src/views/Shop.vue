@@ -52,17 +52,21 @@
       <b-sidebar id="sidebar-right" no-header right shadow>
         <b-container class="h-100 px-3 py-2">
           <b-container class=" h-100 p-0 d-flex flex-column" v-if="items.length > 0">
-            <h5>我的購物車</h5>
-            <b-row v-for="item in items" :key="item.id">
-              <b-col cols="4" class="bg-dark p-0">
+            <b-row class="cart-border-bottom">
+              <b-col>
+                <h5>我的購物車</h5>
+              </b-col>
+            </b-row>
+            <b-row v-for="item in items" :key="item.id" class="cart-border-bottom">
+              <b-col cols="4" class="p-0">
                 <b-img :src="item.src" width="100"></b-img>
               </b-col>
               <b-col>
                 <b-row>
                   <b-col cols="12">{{item.name}}</b-col>
-                  <b-col cols="8">{{item.count}}</b-col>
-                  <b-col cols="4">{{item.price}}</b-col>
-                  <b-col cols="2">
+                  <b-col cols="4">{{item.count}}</b-col>
+                  <b-col cols="4">${{item.price}}</b-col>
+                  <b-col cols="3">
                     <b-button variant="danger" size="sm" @click="del()">
                       <font-awesome-icon :icon="['far', 'trash-alt']"></font-awesome-icon>
                     </b-button>
@@ -70,7 +74,11 @@
                 </b-row>
               </b-col>
             </b-row>
-            <b-btn variant="warning" to="/cart" class="mt-3">去結帳</b-btn>
+            <b-row class="py-2">
+              <b-col class="p-0">
+                <b-btn variant="warning" block to="/cart">去結帳</b-btn>
+              </b-col>
+            </b-row>
           </b-container>
           <b-container class="h-100 d-flex justify-content-center align-items-center" v-else>
             <h5>你的購物車是空的<font-awesome-icon class="mr-2" :icon="['fas', 'shopping-cart']"></font-awesome-icon></h5>
@@ -210,6 +218,10 @@ export default {
 
   .price {
     color: #c0392b;
+  }
+
+  .cart-border-bottom {
+    border-bottom: 2px solid #dee2e6;
   }
 
   /* RWD 768 尺寸以下 ------------------------------------- */

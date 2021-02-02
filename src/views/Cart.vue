@@ -226,7 +226,13 @@ export default {
           timer: 2000,
           timerProgressBar: true
         }).then(() => {
+          this.payName = ''
+          this.phone = ''
+          this.email = ''
+          this.address = ''
+          this.note = ''
           this.$store.state.items.length = null
+          this.$router.push('/cart')
         })
       }
     }
