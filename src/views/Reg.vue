@@ -66,7 +66,7 @@ export default {
                 title: '註冊成功',
                 text: '歡迎加入香緣沉香'
               }).then(() => {
-                this.$router.push('/')
+                this.$router.push('/login')
               })
             } else {
               this.$swal({
