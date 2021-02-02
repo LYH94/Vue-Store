@@ -13,7 +13,7 @@
           </b-navbar-nav>
           <b-navbar-nav>
             <b-nav-item v-if="user.id.length === 0" to="/login">
-              <b-button> 登入
+              <b-button>
                 <font-awesome-icon :icon="['fas', 'user']"></font-awesome-icon>
               </b-button>
             </b-nav-item>

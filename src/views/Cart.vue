@@ -182,13 +182,13 @@ export default {
     },
     state (type) {
       if (type === 'name') {
-        return !(this.payName.length < 2)
+        return this.payName.length === 0 ? null : this.payName.length >= 2
       } else if (type === 'phone') {
-        return !(this.phone.length < 9 || this.phone.length > 10)
+        return this.phone.length === 0 ? null : !(this.phone.length < 9 || this.phone.length > 10)
       } else if (type === 'email') {
-        return this.email.includes('@')
+        return this.email.length === 0 ? null : this.email.includes('@')
       } else if (type === 'address') {
-        return !(this.address.length < 1)
+        return this.address.length === 0 ? null : !(this.address.length < 10)
       }
     },
     onComplete () {
