@@ -6,27 +6,32 @@
     <b-container fluid class="item-bg">
       <b-container>
         <h2 class="item-title">產品介紹</h2>
-        <b-container class="d-flex item-box bg-white align-items-lg-center flex-column flex-lg-row">
-          <div class="img-box">
-            <b-img fluid :src="product[0].src"></b-img>
-          </div>
-          <div class="pl-5 item-text">
-            <h6>{{ product[0].type }}</h6>
-            <h2>{{ product[0].name }}</h2>
-            <h6>{{ product[0].description }}</h6>
-            <h6 class="text-danger">$ {{ product[0].price }}</h6>
-            <b-button class="back-btn" to="/shop" pill>回購物頁</b-button>
-          </div>
-        </b-container>
+          <b-card no-body class="overflow-hidden">
+            <b-row no-gutters>
+              <b-col md="6">
+                <b-card-img :src="product[0].src" alt="Image" class="rounded-0"></b-card-img>
+              </b-col>
+              <b-col md="6" align-self="center">
+                <b-card-body>
+                  <b-card-text>
+                    <h6>{{ product[0].type }}</h6>
+                    <h2>{{ product[0].name }}</h2>
+                    <h6>{{ product[0].description }}</h6>
+                    <h6 class="text-danger">$ {{ product[0].price }}</h6>
+                    <b-button class="back-btn" to="/shop" pill>回購物頁</b-button>
+                  </b-card-text>
+                </b-card-body>
+              </b-col>
+            </b-row>
+          </b-card>
       </b-container>
       <b-container>
         <h2 class="item-title">訂購須知</h2>
         <b-row align-h="center" class="py-3" v-for="(item, index) in notice" :key="index">
           <b-col cols="1">
-            <font-awesome-icon :icon="item.icon" size="5x"></font-awesome-icon>
+            <font-awesome-icon :icon="item.icon" size="4x"></font-awesome-icon>
           </b-col>
-          <b-col cols="1"></b-col>
-          <b-col cols="7">
+          <b-col cols="7" class="ml-5">
             <h5>{{item.text}}</h5>
           </b-col>
         </b-row>
@@ -143,7 +148,14 @@ export default {
   }
 
   .item-box {
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
+  }
+
+  .img-box {
+    width: 50%;
+    height: 100%;
   }
 
   .back-btn {
@@ -155,12 +167,5 @@ export default {
     color: #ffffff !important;
     background-color: #e0a800 !important;
     border-color: #d39e00 !important;
-  }
-
-  @media (min-width: 992px){
-    .img-box {
-      width: 500px;
-      height: 500px;
-    }
   }
 </style>
