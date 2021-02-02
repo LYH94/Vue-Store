@@ -337,7 +337,7 @@ export default {
 
   h3 {
     display: inline-block;
-    border-bottom: 5px solid#013b7a;
+    border-bottom: 5px solid#bbbbbb;
   }
 
   #flavor .card-text,
