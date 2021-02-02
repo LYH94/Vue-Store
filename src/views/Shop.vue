@@ -45,7 +45,7 @@
       </b-row>
     </b-container>
     <div id="go_cart">
-      <b-button class="cart-btn" v-b-toggle.sidebar-right>
+      <b-button variant="outline-light" class="cart-btn" v-b-toggle.sidebar-right>
         <font-awesome-icon class="shopping-cart" :icon="['fas', 'shopping-cart']"></font-awesome-icon>
         <span class="badge badge-pill badge-danger nav_badge">{{ cart }}</span>
       </b-button>
@@ -177,7 +177,6 @@ export default {
     border-radius: 50%;
     position: relative;
     background: #fff;
-    border: none;
   }
 
   .cart-btn:hover {
@@ -192,7 +191,7 @@ export default {
     right: 0;
     bottom: 0;
     margin: auto;
-    color: #013b7a;
+    color: #414141;
   }
 
   #go_cart .nav_badge {
@@ -203,7 +202,7 @@ export default {
   }
 
   #shop-sidebar .nav-item a:hover {
-    color: rgb(184, 145, 39);
+    color: #c0392b;
   }
   #shop-sidebar .nav-item a {
     font-size: 1.1rem;
