@@ -14,11 +14,12 @@
             <div align="center">
               <b-btn variant="warning" class="mx-1" type="submit">登入<font-awesome-icon class="ml-1" :icon="['fas', 'user']"></font-awesome-icon>
               </b-btn>
-              <b-btn variant="warning" class="mx-1" type="submit" to="/reg"> 註冊
-              </b-btn>
+              <b-btn variant="warning" class="mx-1" type="submit" to="/reg"> 註冊<font-awesome-icon class="ml-1" :icon="['fas', 'user-plus']"></font-awesome-icon></b-btn>
             </div>
               <div class="log-text">
-                登入會員即可結帳
+                <span>登入</span>
+                |
+                <span>註冊會員</span>
               </div>
             </b-form>
         </div>
@@ -162,9 +163,9 @@ export default {
 
   .log-text {
     display: block;
-    width: 140px;
+    width: 180px;
     position: absolute;
-    left: 725px;
+    left: 700px;
     top: 250px;
     font-size: 2rem;
     color: #ffc107;

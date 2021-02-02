@@ -24,12 +24,12 @@ import '@/assets/scss/style.scss'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faShoppingCart, faUser, faCheck, faPen, faTimes, faUndo, faMapMarkerAlt, faPhone, faListAlt, faFireAlt, faPlus, faBars, faInfoCircle, faShoppingBag, faCog, faChevronUp, faTruck, faPlaneDeparture, faReceipt } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faUser, faCheck, faPen, faTimes, faUndo, faMapMarkerAlt, faPhone, faListAlt, faFireAlt, faPlus, faBars, faInfoCircle, faShoppingBag, faCog, faChevronUp, faTruck, faPlaneDeparture, faReceipt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt, faUserCircle, faEdit, faCalendarCheck } from '@fortawesome/free-regular-svg-icons'
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import './registerServiceWorker'
 
-library.add(faShoppingCart, faUser, faCheck, faPen, faTimes, faUndo, faTrashAlt, faFacebook, faMapMarkerAlt, faPhone, faInstagram, faGithub, faUserCircle, faEdit, faListAlt, faFireAlt, faPlus, faBars, faInfoCircle, faTruck, faShoppingBag, faCog, faChevronUp, faCalendarCheck, faPlaneDeparture, faReceipt)
+library.add(faShoppingCart, faUser, faCheck, faPen, faTimes, faUndo, faTrashAlt, faFacebook, faMapMarkerAlt, faPhone, faInstagram, faGithub, faUserCircle, faEdit, faListAlt, faFireAlt, faPlus, faBars, faInfoCircle, faTruck, faShoppingBag, faCog, faChevronUp, faCalendarCheck, faPlaneDeparture, faReceipt, faUserPlus)
 
 // 傳送請求時一起傳送認證資訊
 axios.defaults.withCredentials = true
