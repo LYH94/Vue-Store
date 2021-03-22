@@ -1,8 +1,8 @@
 <template>
   <b-container id="register">
     <b-row>
-      <b-col cols="10" class="pt-5">
-        <h3 class="title">會員註冊</h3>
+      <b-col cols="12" class="pt-4 text-center">
+        <p class="user-title">會員註冊</p>
       </b-col>
       <b-col cols="10" md="5" id="register-box">
         <b-form @submit.prevent="onSubmit" @reset="onReset">
@@ -102,10 +102,10 @@ export default {
     margin: auto;
   }
 
-  .title {
+  .user-title {
     color: #333;
     font-weight: 700;
-    text-align: center;
+    font-size: 1.75rem;
   }
 
   #input-mail,

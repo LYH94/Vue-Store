@@ -1,8 +1,8 @@
 <template>
   <b-container id="login">
     <b-row>
-      <b-col cols="10" class="pt-5">
-        <h3 class="title" to="/">會員登入</h3>
+      <b-col cols="12" class="pt-4 text-center">
+        <p class="user-title" to="/">會員登入</p>
       </b-col>
       <b-col cols="10" md="5" id="login-box">
         <b-form @submit.prevent="onSubmit" @reset="onReset">
@@ -95,30 +95,24 @@ export default {
 }
 </script>
 <style lang="scss">
-.log-card {
-  position: relative;
-    background: #ffffff;
-    border-radius: 5px;
-    padding: 60px 0 40px 0;
-    box-sizing: border-box;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-    transition: 0.3s ease;
-}
+  .log-card {
+    position: relative;
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 60px 0 40px 0;
+      box-sizing: border-box;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+      transition: 0.3s ease;
+  }
 
-#signin {
-  padding-top: 2rem;
-}
+  #signin {
+    padding-top: 2rem;
+  }
 
   #login-box {
     padding: 16px 32px 32px;
     border-radius: 8px;
     margin: auto;
-  }
-
-  .title {
-    color: #333;
-    font-weight: 700;
-    text-align: center;
   }
 
   #input-account,
