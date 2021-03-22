@@ -1,31 +1,30 @@
 <template>
-  <div id="login">
-    <b-container>
-      <div id="signin">
-        <div class="log-card">
-          <h1>登入</h1>
-          <b-form @submit.prevent="onSubmit" @reset="onReset">
-            <b-form-group id="input-group-1" label="帳號" label-for="input-1" :state="accountState" description="帳號長度為 4 ~ 20 個字" invalid-feedback="帳號格式不符">
-              <b-form-input id="input-1" v-model="account" type="text" required="required" placeholder="請輸入帳號..." :state="accountState"></b-form-input>
-            </b-form-group>
-            <b-form-group id="input-group-2" label="密碼" label-for="input-2" :state="passwordState" description="密碼長度為 4 ~ 20 個字" invalid-feedback="密碼格式不符">
-              <b-form-input id="input-2" v-model="password" type="password" required="required" placeholder="請輸入密碼..." :state="passwordState"></b-form-input>
-            </b-form-group>
-            <div align="center">
-              <b-btn variant="warning" class="mx-1" type="submit">登入<font-awesome-icon class="ml-1" :icon="['fas', 'user']"></font-awesome-icon>
-              </b-btn>
-              <b-btn variant="warning" class="mx-1" type="submit" to="/reg"> 註冊<font-awesome-icon class="ml-1" :icon="['fas', 'user-plus']"></font-awesome-icon></b-btn>
-            </div>
-              <div class="log-text">
-                <span>登入</span>
-                |
-                <span>註冊會員</span>
-              </div>
-            </b-form>
-        </div>
-      </div>
-    </b-container>
-  </div>
+  <b-container id="login">
+    <b-row>
+      <b-col cols="12" class="pt-5">
+        <h3 class="title" to="/">會員登入</h3>
+      </b-col>
+      <b-col cols="12" md="5" id="login-box">
+        <b-form @submit.prevent="onSubmit" @reset="onReset">
+          <b-form-group id="input-group-account" label="帳號" label-for="input-account" :state="accountState" invalid-feedback="帳號格式不符">
+              <b-form-input id="input-account" v-model="account" type="text" required="required" placeholder="請輸入帳號" :state="accountState" v-b-popover.click.left="'帳號長度需為 4 ~ 20 個字'"></b-form-input>
+          </b-form-group>
+          <b-form-group id="input-group-password" label="密碼" label-for="input-password" :state="passwordState" invalid-feedback="密碼格式不符">
+            <b-form-input id="input-password" v-model="password" type="password" required="required" placeholder="請輸入密碼" :state="passwordState" v-b-popover.click.left="'密碼長度需為 4 ~ 20 個字'"></b-form-input>
+          </b-form-group>
+          <div>
+            <b-btn id="submit-btn" variant="light" type="submit">登入</b-btn>
+          </div>
+          <div class="break-heading">
+            <span>或</span>
+          </div>
+          <div>
+            <b-btn id="register-btn" variant="light" to="/reg">註冊帳戶</b-btn>
+          </div>
+        </b-form>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -95,80 +94,95 @@ export default {
   }
 }
 </script>
-<style>
-  #signin {
-    position: relative;
-    margin-top: 200px;
-    height: 400px;
-    background: #212529;
-  }
-
-  .log-card {
-    width: 90%;
-    height: 480px;
-    padding: 30px;
-    top: -40px;
-    left: 25px;
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    position: absolute;
-  }
-
-  .log-card h1 {
-    margin-top: 50px;
-    color:#013b7a;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bolder;
-  }
-
-  form {
-    margin-top: 40px;
-  }
-
-  .log-text {
-    display: none;
-  }
-
-@media (min-width: 992px){
-  #signin {
-    position: relative;
-    margin-top: 200px;
-    height: 500px;
-    background: #212529;
-  }
-
-  .log-card {
-    width: 50%;
-    height: 600px;
-    padding: 30px;
-    top: -50px;
-    left: 80px;
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    position: absolute;
-  }
-
-  .log-card h1 {
-    margin-top: 50px;
-    color:#013b7a;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bolder;
-  }
-
-  form {
-    margin-top: 80px;
-  }
-
-  .log-text {
-    display: block;
-    width: 180px;
-    position: absolute;
-    left: 700px;
-    top: 250px;
-    font-size: 2rem;
-    color: #ffc107;
-  }
+<style lang="scss">
+.log-card {
+  position: relative;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 60px 0 40px 0;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition: 0.3s ease;
 }
+
+#signin {
+  padding-top: 2rem;
+}
+
+  #login-box {
+    padding: 16px 32px 32px;
+    border-radius: 8px;
+    margin: auto;
+  }
+
+  .title {
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #input-account,
+  #input-password {
+    position: relative;
+    text-align: left;
+    padding: 6px 10px 6px 12px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  #submit-btn {
+    color: #fff;
+    background-color: #333;
+    border-radius: 0.5rem;
+    padding: 0;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  #register-btn {
+    padding: 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    color: #000;
+    border-radius: 0.5rem;
+    padding: 0;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  .break-heading {
+    text-align: center;
+    position: relative;
+    margin: 24px 0;
+  }
+
+  .break-heading::before {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #d8d8d8;
+    position: absolute;
+    top: 50%;
+    height: 0;
+    width: 100%;
+  }
+
+  .break-heading span {
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: #121212;
+    font-size: 18px;
+    padding: 0 10px;
+    font-weight: 700;
+  }
 </style>
