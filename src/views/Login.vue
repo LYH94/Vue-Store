@@ -1,10 +1,10 @@
 <template>
   <b-container id="login">
     <b-row>
-      <b-col cols="12" class="pt-5">
+      <b-col cols="10" class="pt-5">
         <h3 class="title" to="/">會員登入</h3>
       </b-col>
-      <b-col cols="12" md="5" id="login-box">
+      <b-col cols="10" md="5" id="login-box">
         <b-form @submit.prevent="onSubmit" @reset="onReset">
           <b-form-group id="input-group-account" label="帳號" label-for="input-account" :state="accountState" invalid-feedback="帳號格式不符">
               <b-form-input id="input-account" v-model="account" type="text" required="required" placeholder="請輸入帳號" :state="accountState" v-b-popover.click.left="'帳號長度需為 4 ~ 20 個字'"></b-form-input>
