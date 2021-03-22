@@ -2,7 +2,7 @@
   <b-container id="register">
     <b-row>
       <b-col cols="12" class="pt-4 text-center">
-        <p class="user-title">會員註冊</p>
+        <h3 class="user-title">會員註冊</h3>
       </b-col>
       <b-col cols="10" md="5" id="register-box">
         <b-form @submit.prevent="onSubmit" @reset="onReset">
@@ -105,7 +105,6 @@ export default {
   .user-title {
     color: #333;
     font-weight: 700;
-    font-size: 1.75rem;
   }
 
   #input-mail,
@@ -164,7 +163,7 @@ export default {
   }
 
   .break-heading span {
-    background-color: #fff;
+    background-color: $mainColor;
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -173,5 +172,4 @@ export default {
     padding: 0 10px;
     font-weight: 700;
   }
-
 </style>

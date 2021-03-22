@@ -2,7 +2,7 @@
   <b-container id="login">
     <b-row>
       <b-col cols="12" class="pt-4 text-center">
-        <p class="user-title" to="/">會員登入</p>
+        <h3 class="user-title">會員登入</h3>
       </b-col>
       <b-col cols="10" md="5" id="login-box">
         <b-form @submit.prevent="onSubmit" @reset="onReset">
@@ -94,6 +94,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
   .log-card {
     position: relative;
@@ -107,6 +108,11 @@ export default {
 
   #signin {
     padding-top: 2rem;
+  }
+
+.user-title {
+    color: #333;
+    font-weight: 700;
   }
 
   #login-box {
@@ -170,7 +176,7 @@ export default {
   }
 
   .break-heading span {
-    background-color: #fff;
+    background-color: $mainColor;
     display: inline-block;
     position: relative;
     z-index: 1;

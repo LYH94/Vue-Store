@@ -335,7 +335,7 @@ export default {
     height: 800px;
   }
 
-  h3 {
+  #about h3 {
     display: inline-block;
     border-bottom: 5px solid#bbbbbb;
   }
