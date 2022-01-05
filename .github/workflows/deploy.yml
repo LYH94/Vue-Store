@@ -27,3 +27,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          VUE_APP_API: ${{ secrets.VUE_APP_API }}
+          VUE_APP_GA: ${{ secrets.VUE_APP_GA }}
